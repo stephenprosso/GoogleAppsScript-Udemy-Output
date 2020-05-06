@@ -14,19 +14,18 @@ function myFunction1() {
   
    var holderArray = [];
   var HTMLTemp = HtmlService.createTemplateFromFile('index');
-  
-   Logger.log(values);
-  var holder = '';
   for(x=0;x<values.length;x++){
-    holder += values[x][0] + ' ' + values[x][1] + ' ' + values[x][2] + ' ' + values[x][3] + ' ' + values[x][4] + '<br>'; 
-  }
+  holderArray.push({
+       "first" : values[x][0],
+       "last" : values[x][1],
+       "email" : values[x][2],
+       "approved" : values[x][3],
+       "age" : values[x][4],
+     });
+   }
+  HTMLTemp.data = holderArray;
   
    //var html = HtmlService.createHtmlOutputFromFile('index');
-  HTMLTemp.data = {
-    test : 'Tester',
-    test1 : 'Tester_Uno'
-  
-  }
   
     var html = HTMLTemp.evaluate().setHeight(600).setWidth(600)
     SpreadsheetApp.getUi().showModalDialog(html, 'Da Tiiiitell!');

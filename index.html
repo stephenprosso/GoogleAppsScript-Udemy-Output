@@ -26,21 +26,21 @@ console.log(datags);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script>
-    //    $(function () {
+        $(function () {
             //console.log(datags);
-    //        jQuery.each(datags, function () {
-  //              console.log(this);
-  //              $('#myTable tr:last').after('<tr><td>' + this.first + '</td><td>' + this.last + '</td><td>' + this.email + '</td><td>' + this.approved + '</td><td>' + this.age + '</td></tr>');
-//            })
-  //      });
+            jQuery.each(datags, function () {
+                console.log(this);
+                $('#myTable tr:last').after('<tr><td>' + this.first + '</td><td>' + this.last + '</td><td>' + this.email + '</td><td>' + this.approved + '</td><td>' + this.age + '</td></tr>');
+            })
+        });
 
-            $.getJSON('https://spreadsheets.google.com/feeds/cells/1uLijGV4gOi-17IbLSt-j3bUrGrK0L11zpM915RqJ7EA/1/public/full?alt=json', function (data) {
+           /* $.getJSON('https://spreadsheets.google.com/feeds/cells/1uLijGV4gOi-17IbLSt-j3bUrGrK0L11zpM915RqJ7EA/1/public/full?alt=json', function (data) {
                 var d = data.feed.entry;
                 jQuery.each(d, function () {
                     $('#myTable tr:last').after('<tr><td>' + this['gs$cell']['$t'] + '</td><td>' + this['gs$cell']['$t'] + '</td><td>' + this['gs$cell']['$t'] + '</td><td>' + this['gs$cell']['$t'] + '</td><td>' + this['gs$cell']['$t'] + '</td></tr>');
                 })
                 console.log(d);
-            });
+            }); */
 
     </script>
   </body>
